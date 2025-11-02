@@ -13,6 +13,7 @@ Recordings/
 .vscode/
 *.code-workspace
 .idea/
+.plastic/
 *.suo
 *.user
 *.userprefs
