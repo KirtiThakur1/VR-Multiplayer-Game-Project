@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ded4a2ddce468e949bfb39dcc05b7d67, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ded4a2ddce468e949bfb39dcc05b7d67, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ded4a2ddce468e949bfb39dcc05b7d67, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ded4a2ddce468e949bfb39dcc05b7d67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -80,7 +80,10 @@ PrefabInstance:
       addedObject: {fileID: 2504359346592721292}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ded4a2ddce468e949bfb39dcc05b7d67, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8050656006697260578}
+      addedObject: {fileID: 5273909667015513291}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ded4a2ddce468e949bfb39dcc05b7d67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6593740094196248750}
   m_SourcePrefab: {fileID: 100100000, guid: ded4a2ddce468e949bfb39dcc05b7d67, type: 3}
 --- !u!1 &4902937066590102933 stripped
 GameObject:
@@ -111,9 +114,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &2504359346592721292
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -136,7 +139,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4969419583682912776, guid: ded4a2ddce468e949bfb39dcc05b7d67, type: 3}
---- !u!114 &8050656006697260578
+--- !u!95 &5273909667015513291
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902937066590102933}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 98abe07421cc4644f9b3b177f7d9647d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6593740094196248750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4902937066590102933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 458e75bba34e82c4a92bfe5595205d65, type: 3}
+  m_Script: {fileID: 11500000, guid: 27a88918bad96fb42a4c3f62bb228dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundTag: Ground

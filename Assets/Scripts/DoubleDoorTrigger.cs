@@ -10,8 +10,8 @@ public class DoubleDoorTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        if (leftDoor != null) leftDoor.Open();
-        if (rightDoor != null) rightDoor.Open();
+        if (leftDoor != null) leftDoor.OpenDoor();
+        if (rightDoor != null) rightDoor.OpenDoor();
     }
 
     private void OnTriggerExit(Collider other)
@@ -19,7 +19,7 @@ public class DoubleDoorTrigger : MonoBehaviour
         if (!closeOnExit) return;
         if (!other.CompareTag("Player")) return;
 
-        if (leftDoor != null) leftDoor.Close();
-        if (rightDoor != null) rightDoor.Close();
+        if (leftDoor != null) leftDoor.CloseDoor();
+        if (rightDoor != null) rightDoor.CloseDoor();
     }
 }
