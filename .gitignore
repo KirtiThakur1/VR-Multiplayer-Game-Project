@@ -11,6 +11,7 @@ Recordings/
 
 # === IDE / Editor Settings ===
 .vscode/
+.vs/
 *.code-workspace
 .idea/
 .plastic/
