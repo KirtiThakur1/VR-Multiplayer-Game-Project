@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5722749551556726405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5396872411253118730}
+  - component: {fileID: 3419439753061965211}
+  m_Layer: 0
+  m_Name: FruitSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5396872411253118730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722749551556726405}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.44, y: 0, z: -0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3419439753061965211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722749551556726405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a16d577a61ae54ab89aee9597457e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitPrefabs:
+  - {fileID: 4902937066590102933, guid: 20a85bb45d9018549b89153a58c9bd6f, type: 3}
+  - {fileID: 3313352992049153896, guid: f15df6f7fa872f142bb9215e047bdd16, type: 3}
+  - {fileID: 3823145734511749876, guid: c992a7bb4b2e186429ef9d496cf346fd, type: 3}
+  - {fileID: 258654113025970864, guid: 127005bf003318f4485a726e24a2b99e, type: 3}
+  - {fileID: 454756926981083613, guid: f5a75c781c8314e458b0edf410773336, type: 3}
+  - {fileID: 4025620211563265182, guid: 4ac535aeba11b0b4b8feafec49c62240, type: 3}
+  - {fileID: 797303323285380787, guid: 412f253506151bf419e22a1f27500682, type: 3}
+  - {fileID: 3425206400497552810, guid: c21f6ab8bc5159645ad1ec0cbf646cd1, type: 3}
+  - {fileID: 1323490730993423476, guid: 3bcbe5cd59399314aab29f8622741a57, type: 3}
+  - {fileID: 4990981021304705563, guid: 9b3d965623ae481439635eb1d095cf25, type: 3}
+  areaSize: {x: 7, y: 9}
+  spawnY: 4
+  spawnInterval: 0.6
+  angularSpeed: {x: 1, y: 3}
+  noSpawnZones: []
+  maxPlacementTries: 20

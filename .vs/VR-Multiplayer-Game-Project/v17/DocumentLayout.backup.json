@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|c:\\users\\horatio\\documents\\github\\vr-multiplayer-game-project\\assets\\scripts\\randomareamovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\randomareamovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\assets\\scripts\\fruitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fruitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\NewEmptyCSharpScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\NewEmptyCSharpScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +27,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RandomAreaMovement.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\RandomAreaMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RandomAreaMovement.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\RandomAreaMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RandomAreaMovement.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAADwv0gAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T18:09:14.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FruitSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\FruitSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FruitSpawner.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\FruitSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FruitSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T11:32:07.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "NewEmptyCSharpScript.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\NewEmptyCSharpScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NewEmptyCSharpScript.cs",
