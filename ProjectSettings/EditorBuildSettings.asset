@@ -16,6 +16,7 @@ EditorBuildSettings:
       Setup/VRSYS-SingleScene.unity
     guid: b696740ea170a5840baa71d36430d7a2
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f1b7c030eefe5b44694541bf477c708d, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6d6b4de4a1e50bf42a6157bc28657cac, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 1457c0ad1ba63c340b48457fae0e67ba, type: 2}
