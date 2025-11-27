@@ -399,15 +399,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.xr.oculus": {
-      "version": "4.5.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.xr.management": "4.4.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.xr.openxr": {
       "version": "1.14.3",
       "depth": 0,
@@ -434,7 +425,7 @@
       "dependencies": {
         "com.vrsys.core": "1.0.2"
       },
-      "hash": "f212f0193e1e1f11803c931606d0a6198554511a"
+      "hash": "b9f84f8e864b4587779928ae7a748e00e0eb5581"
     },
     "com.vrsys.core": {
       "version": "https://github.com/vrsys/vrsys-core.git?path=/Packages/com.vrsys.core",
@@ -449,7 +440,7 @@
         "com.unity.xr.openxr": "1.14.3",
         "com.unity.ugui": "2.0.0"
       },
-      "hash": "f212f0193e1e1f11803c931606d0a6198554511a"
+      "hash": "b9f84f8e864b4587779928ae7a748e00e0eb5581"
     },
     "com.vrsys.meta-integrations": {
       "version": "https://github.com/vrsys/vrsys-core.git?path=/Packages/com.vrsys.meta-integrations",
@@ -460,7 +451,7 @@
         "com.meta.xr.sdk.avatars": "35.2.0",
         "com.meta.xr.sdk.core": "76.0.1"
       },
-      "hash": "f212f0193e1e1f11803c931606d0a6198554511a"
+      "hash": "b9f84f8e864b4587779928ae7a748e00e0eb5581"
     },
     "io.fourplayers.odin": {
       "version": "https://github.com/4Players/odin-sdk-unity.git",
