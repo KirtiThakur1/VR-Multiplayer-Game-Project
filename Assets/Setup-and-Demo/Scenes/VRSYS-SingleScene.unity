@@ -2826,7 +2826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1499498132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2834,13 +2834,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499498131}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 970707a320b7b114287c1eb328564b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HMDPrefab: {fileID: 7216047633976425186, guid: 809cce775431de842bae2eca7c27e046, type: 3}
-  DesktopPrefab: {fileID: 7735290717479492331, guid: 9f766c4edec997f4bb5f428a7ab4403b, type: 3}
 --- !u!4 &1499498133
 Transform:
   m_ObjectHideFlags: 0
