@@ -1,0 +1,34 @@
+{
+    "name": "VRGripActions",
+    "maps": [
+        {
+            "name": "RightHand",
+            "id": "0ab1ceb9-7a40-4111-99b5-d1c3850de01c",
+            "actions": [
+                {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "78f4aaa1-3379-40ac-ab4a-49d1360bf17e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "31f37bff-4616-4098-987a-4c81aa581f8e",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
