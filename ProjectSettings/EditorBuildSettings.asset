@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Setup-and-Demo/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Setup-and-Demo/Scenes/VR Lab Class Models/LowPolyDungeons/Scenes/LowPolyDungeons_Demo.unity
+    guid: 4493b8fca21333f42b8e092ad7866f86
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b85e88f2427095146a789b489eaa9977, type: 2}
