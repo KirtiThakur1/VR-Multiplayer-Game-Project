@@ -7,14 +7,15 @@ public class ScoreUI : MonoBehaviour
     public TextMeshProUGUI lastPointsText;
     public TextMeshProUGUI totalScoreText;
 
-    private void Start()
+    private void OnEnable()
     {
-        UpdateUI("-", 0, 0);
+        UpdateUI("-", 0, ScoreManager.Instance != null ? ScoreManager.Instance.CurrentScore : 0);
 
-        ScoreManager.Instance.OnScoreChanged += HandleScoreChanged;
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.OnScoreChanged += HandleScoreChanged;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (ScoreManager.Instance != null)
             ScoreManager.Instance.OnScoreChanged -= HandleScoreChanged;
@@ -27,8 +28,9 @@ public class ScoreUI : MonoBehaviour
 
     private void UpdateUI(string name, int delta, int total)
     {
-        lastObjectText.text = $"Last: {name}";
-        lastPointsText.text = (delta >= 0) ? $"+{delta}" : $"{delta}";
-        totalScoreText.text = $"Total: {total}";
+        if (lastObjectText != null) lastObjectText.text = $"Last: {name}";
+        if (lastPointsText != null) lastPointsText.text = (delta >= 0) ? $"+{delta}" : $"{delta}";
+        if (totalScoreText != null) totalScoreText.text = $"Total: {total}";
     }
 }
+

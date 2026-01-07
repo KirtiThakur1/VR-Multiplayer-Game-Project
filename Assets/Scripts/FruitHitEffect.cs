@@ -9,26 +9,34 @@ public class FruitHitEffect : MonoBehaviour
 
     private Color originalColor;
     private Coroutine flashRoutine;
+    private bool sliced;
+
+    private Fruit fruit;
 
     void Start()
     {
+        fruit = GetComponent<Fruit>();
+
         if (rend == null)
-        {
             rend = GetComponentInChildren<Renderer>();
-        }
 
         if (rend != null)
-        {
             originalColor = rend.material.color;
-        }
     }
 
     public void OnSliced()
     {
-        if (flashRoutine != null)
+        if (sliced) return;   
+        sliced = true;
+
+        if (ScoreManager.Instance != null && fruit != null)
         {
-            StopCoroutine(flashRoutine);
+            ScoreManager.Instance.RegisterFruitSlice(fruit);
         }
+
+        if (flashRoutine != null)
+            StopCoroutine(flashRoutine);
+
         flashRoutine = StartCoroutine(FlashAndDie());
     }
 
@@ -40,13 +48,14 @@ public class FruitHitEffect : MonoBehaviour
         {
             t += Time.deltaTime;
             float lerp = t / flashDuration;
+
             if (rend != null)
-            {
                 rend.material.color = Color.Lerp(originalColor, hitColor, lerp);
-            }
+
             yield return null;
         }
 
-        Destroy(gameObject); // بعد از افکت، میوه حذف میشه
+        Destroy(gameObject);
     }
 }
+
