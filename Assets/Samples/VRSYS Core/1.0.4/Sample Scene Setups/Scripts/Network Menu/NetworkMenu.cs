@@ -54,17 +54,17 @@ namespace VRSYS.Core.Networking
         public string name;
         public Color color;
     }
-
+    
     public class NetworkMenu : MonoBehaviour
     {
         #region Member Variables
 
-        [Header("UI Sections")]
+        [Header("UI Sections")] 
         public GameObject lobbyOverview;
         public GameObject createLobbySection;
         public GameObject localNetworkSection;
-
-        [Header("Interactive UI Elements")]
+        
+        [Header("Interactive UI Elements")] 
         public TMP_InputField userNameInputField;
         public TMP_Dropdown userRoleDropdown;
         public TMP_Dropdown userColorDropdown;
@@ -82,13 +82,13 @@ namespace VRSYS.Core.Networking
         public Button startClientButton;
         public Button localNetworkBackButton;
 
-        [Header("Lobby Tiles")]
+        [Header("Lobby Tiles")] 
         public GameObject lobbyTilePrefab;
         public Transform tileParent;
-
+        
         [Header("Selectable Setup Options")]
         public List<NamedColor> avatarColors;
-
+        
         private NetworkUserSpawnInfo spawnInfo => ConnectionManager.Instance.userSpawnInfo;
 
         private LobbyListUpdater lobbyListUpdater;
@@ -103,14 +103,14 @@ namespace VRSYS.Core.Networking
 
         private void Start()
         {
-            /* if (ConnectionManager.Instance.lobbySettings.autoStart)
-             {
-                 gameObject.SetActive(false);
-                 return;
-             } */
+            if (ConnectionManager.Instance.lobbySettings.autoStart)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
 
             lobbyListUpdater = FindObjectOfType<LobbyListUpdater>();
-
+            
             SetupUIElements();
             SetupUIEvents();
         }
@@ -123,12 +123,12 @@ namespace VRSYS.Core.Networking
         {
             // setup user name input field
             userNameInputField.text = spawnInfo.userName;
-
+            
             // Setup user role dropdown
             userRoleDropdown.options.Clear();
 
             List<string> userRoles = new List<string>();
-
+            
             foreach (var userRole in UserRoleList.Instance.RoleEntries)
                 userRoles.Add(userRole.Name);
 
@@ -139,23 +139,23 @@ namespace VRSYS.Core.Networking
                 int index = userRoleDropdown.options.FindIndex(
                     s => s.text.Equals(spawnInfo.userRole.Name));
                 index = index == -1 ? 0 : index;
-
+            
                 userRoleDropdown.value = index;
             }
-
+            
             UpdateUserRole(); // secure that the user role is set consistent between ui and manager
 
             // Setup user color dropdown
             userColorDropdown.options.Clear();
-
+            
             List<string> availableUserColors = new List<string>();
             foreach (var color in avatarColors)
             {
                 availableUserColors.Add(color.name);
             }
-
+            
             userColorDropdown.AddOptions(availableUserColors);
-
+            
             spawnInfo.userColor = avatarColors[0].color;
 
             ipAddressInputField.text = localNetworkSettings.ipAddress;
@@ -164,37 +164,37 @@ namespace VRSYS.Core.Networking
 
         private void SetupUIEvents()
         {
-            if (userNameInputField is not null)
+            if(userNameInputField is not null)
                 userNameInputField.onValueChanged.AddListener(UpdateUserName);
-            if (userRoleDropdown is not null)
+            if(userRoleDropdown is not null)
                 userRoleDropdown.onValueChanged.AddListener(UpdateUserRole);
-            if (userColorDropdown is not null)
+            if(userColorDropdown is not null)
                 userColorDropdown.onValueChanged.AddListener(UpdateUserColor);
-            if (lobbyNameInputField is not null)
+            if(lobbyNameInputField is not null)
                 lobbyNameInputField.onValueChanged.AddListener(UpdateLobbyName);
-            if (maxUsersInputField is not null)
+            if(maxUsersInputField is not null)
                 maxUsersInputField.onValueChanged.AddListener(UpdateMaxUser);
-            if (addLobbyButton is not null)
+            if(addLobbyButton is not null)
                 addLobbyButton.onClick.AddListener(AddLobby);
-            if (createLobbyButton is not null)
+            if(createLobbyButton is not null)
                 createLobbyButton.onClick.AddListener(CreateLobby);
-            if (backButton is not null)
+            if(backButton is not null)
                 backButton.onClick.AddListener(Back);
-            if (localNetworkButton is not null)
+            if(localNetworkButton is not null)
                 localNetworkButton.onClick.AddListener(LocalNetwork);
-            if (ipAddressInputField is not null)
+            if(ipAddressInputField is not null)
                 ipAddressInputField.onValueChanged.AddListener(UpdateIPAddress);
-            if (portInputField is not null)
+            if(portInputField is not null)
                 portInputField.onValueChanged.AddListener(UpdatePort);
-            if (startServerButton is not null)
+            if(startServerButton is not null)
                 startServerButton.onClick.AddListener(StartServer);
-            if (startHostButton is not null)
+            if(startHostButton is not null)
                 startHostButton.onClick.AddListener(StartHost);
-            if (startClientButton is not null)
+            if(startClientButton is not null)
                 startClientButton.onClick.AddListener(StartClient);
-            if (localNetworkBackButton is not null)
+            if(localNetworkBackButton is not null)
                 localNetworkBackButton.onClick.AddListener(LocalNetworkBack);
-
+            
             ConnectionManager.Instance.onConnectionStateChange.AddListener(UpdateConnectionState);
 
             if (lobbyListUpdater == null)
@@ -211,12 +211,12 @@ namespace VRSYS.Core.Networking
         {
             spawnInfo.userName = userNameInputField.text;
         }
-
+        
         private void UpdateUserRole(int arg0)
         {
             UpdateUserRole();
         }
-
+        
         private void UpdateUserRole()
         {
             spawnInfo.userRole = new UserRole(userRoleDropdown.options[userRoleDropdown.value].text);
@@ -227,7 +227,7 @@ namespace VRSYS.Core.Networking
             NamedColor selectedColor = avatarColors.Find(color => color.name.Equals(userColorDropdown.options[userColorDropdown.value].text));
             spawnInfo.userColor = selectedColor.color;
         }
-
+        
         private void UpdateLobbyName(string arg0)
         {
             ConnectionManager.Instance.lobbySettings.lobbyName = lobbyNameInputField.text;
@@ -237,7 +237,7 @@ namespace VRSYS.Core.Networking
         {
             ConnectionManager.Instance.lobbySettings.maxUsers = int.Parse(maxUsersInputField.text);
         }
-
+        
         private void AddLobby()
         {
             ConnectionManager.Instance.lobbySettings.lobbyName = "";
@@ -251,14 +251,12 @@ namespace VRSYS.Core.Networking
             gameObject.SetActive(false);
         }
 
-
-
         private void Back()
         {
             lobbyOverview.SetActive(true);
             createLobbySection.SetActive(false);
         }
-
+        
         private void UpdateConnectionState(ConnectionState state)
         {
             switch (state)
@@ -289,11 +287,11 @@ namespace VRSYS.Core.Networking
                 {
                     GameObject lobbyTile = Instantiate(lobbyTilePrefab, tileParent);
                     lobbyTile.GetComponent<LobbyTile>().SetupTile(lobby, this);
-
+                    
                     lobbyTiles.Add(lobby.LobbyId, lobbyTile.GetComponent<LobbyTile>());
                 }
             }
-
+            
             // foreach (Transform t in tileParent)
             // {
             //     Destroy(t.gameObject);
@@ -306,7 +304,7 @@ namespace VRSYS.Core.Networking
             // }
 
             RectTransform contentTransform = tileParent.GetComponent<RectTransform>();
-            contentTransform.sizeDelta = new Vector2(lobbyListUpdater.lobbyList.Count * (lobbyTilePrefab.GetComponent<RectTransform>().rect.height + tileParent.GetComponent<VerticalLayoutGroup>().spacing), contentTransform.rect.width);
+            contentTransform.sizeDelta = new Vector2(lobbyListUpdater.lobbyList.Count * (lobbyTilePrefab.GetComponent<RectTransform>().rect.height + tileParent.GetComponent<VerticalLayoutGroup>().spacing),contentTransform.rect.width);
         }
 
         public void RemoveLobbyTile(string lobbyId)
@@ -320,7 +318,7 @@ namespace VRSYS.Core.Networking
             lobbyOverview.SetActive(false);
             localNetworkSection.SetActive(true);
         }
-
+        
         private void UpdateIPAddress(string arg0)
         {
             localNetworkSettings.ipAddress = ipAddressInputField.text;

@@ -11,6 +11,7 @@ Recordings/
 
 # === IDE / Editor Settings ===
 .vscode/
+.vs/
 *.code-workspace
 .idea/
 .plastic/
@@ -42,6 +43,4 @@ Thumbs.db
 
 # === Crash Reports / Misc ===
 sysinfo.txt
-
-Assets/Oculus/Avatar2_SampleAssets/SampleAssets/SampleAssets/PresetAvatars_Quest.zip
-Assets/Oculus/Avatar2_SampleAssets/SampleAssets/SampleAssets/PresetAvatars_Rift.zip
+*.zip
