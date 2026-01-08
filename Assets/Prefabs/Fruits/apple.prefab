@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1397712294630925217}
   - component: {fileID: 117847488724319338}
   - component: {fileID: 1806314702380390414}
-  - component: {fileID: 6857279260065133124}
   - component: {fileID: 5069387667720214356}
-  - component: {fileID: 1083065580595925607}
+  - component: {fileID: 7342159039335632614}
+  - component: {fileID: 1547274754044980733}
   m_Layer: 0
   m_Name: apple
   m_TagString: Fruit
@@ -163,20 +163,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6857279260065133124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564240846999082619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a88918bad96fb42a4c3f62bb228dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundTag: Ground
-  destroyDelay: 0
 --- !u!114 &5069387667720214356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +178,7 @@ MonoBehaviour:
   rend: {fileID: 2077402424561825710}
   hitColor: {r: 0.0627451, g: 0.7490196, b: 0, a: 1}
   flashDuration: 0.2
---- !u!114 &1083065580595925607
+--- !u!114 &7342159039335632614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +187,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 564240846999082619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498b080bb18566d498af40205fb59be1, type: 3}
+  m_Script: {fileID: 11500000, guid: bc3ff63250d7b4847a7fa12bf693f82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseScore: 3
+  groundTag: Ground
+  destroyDelay: 0
+--- !u!114 &1547274754044980733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564240846999082619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efefe7ebe7bc75b4cb275b294b521c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseScore: 4

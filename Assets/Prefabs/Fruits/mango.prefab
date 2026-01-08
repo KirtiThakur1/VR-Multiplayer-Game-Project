@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4387282500088972011}
   - component: {fileID: 5733849108142637420}
   - component: {fileID: 6652378291854962612}
-  - component: {fileID: 6848585037592176226}
   - component: {fileID: 4091672391271262142}
   - component: {fileID: 9046924957535966261}
-  - component: {fileID: 8022285312728953848}
+  - component: {fileID: 255467814620689567}
+  - component: {fileID: 6516612499061657620}
   m_Layer: 0
   m_Name: mango
   m_TagString: Fruit
@@ -141,20 +141,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2047478929088557861, guid: 40d49583ec870fe45b4cac40df0f7e2a, type: 3}
---- !u!114 &6848585037592176226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5249757990968288508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a88918bad96fb42a4c3f62bb228dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundTag: Ground
-  destroyDelay: 0
 --- !u!95 &4091672391271262142
 Animator:
   serializedVersion: 7
@@ -192,7 +178,7 @@ MonoBehaviour:
   rend: {fileID: 4387282500088972011}
   hitColor: {r: 0.0627451, g: 0.7490196, b: 0, a: 1}
   flashDuration: 0.2
---- !u!114 &8022285312728953848
+--- !u!114 &255467814620689567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +187,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5249757990968288508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498b080bb18566d498af40205fb59be1, type: 3}
+  m_Script: {fileID: 11500000, guid: bc3ff63250d7b4847a7fa12bf693f82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundTag: Ground
+  destroyDelay: 0
+--- !u!114 &6516612499061657620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249757990968288508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efefe7ebe7bc75b4cb275b294b521c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 4

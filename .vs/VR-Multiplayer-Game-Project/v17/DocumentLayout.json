@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\ScoreUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ScoreUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|c:\\users\\horatio\\documents\\github\\vr-multiplayer-game-project\\assets\\setup-and-demo\\scripts\\lookatplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\lookatplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|c:\\users\\horatio\\documents\\github\\vr-multiplayer-game-project\\assets\\setup-and-demo\\scripts\\scoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\assets\\setup-and-demo\\scripts\\axeslicer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\axeslicer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|c:\\users\\horatio\\documents\\github\\vr-multiplayer-game-project\\assets\\setup-and-demo\\scripts\\scoreui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\scoreui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|c:\\users\\horatio\\documents\\github\\vr-multiplayer-game-project\\assets\\setup-and-demo\\scripts\\fruit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\fruit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\assets\\setup-and-demo\\scripts\\scoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\scoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|c:\\users\\horatio\\documents\\github\\vr-multiplayer-game-project\\assets\\setup-and-demo\\scripts\\limitfallspeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\limitfallspeed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\assets\\setup-and-demo\\scripts\\fruitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\fruitspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|c:\\users\\horatio\\documents\\github\\vr-multiplayer-game-project\\assets\\setup-and-demo\\scripts\\togglegrab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\togglegrab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Library\\PackageCache\\com.meta.xr.sdk.core@5c4cefc6b3e8\\Editor\\OVRConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.meta.xr.sdk.core@5c4cefc6b3e8\\Editor\\OVRConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\assets\\setup-and-demo\\scripts\\steering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED7D4BF2-411D-F052-017C-A213AA650951}|Assembly-CSharp.csproj|solutionrelative:assets\\setup-and-demo\\scripts\\steering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\ScoreUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ScoreUI.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\LookAtPlayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,24 +98,139 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LookAtPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\LookAtPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\LookAtPlayer.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\LookAtPlayer.cs",
+              "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\LookAtPlayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T21:26:12.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ScoreUI.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\ScoreUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\ScoreUI.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\ScoreUI.cs",
+              "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\ScoreUI.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwB4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T20:49:56.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Fruit.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\Fruit.cs",
+              "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\Fruit.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\Fruit.cs",
+              "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\Fruit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T20:43:48.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LimitFallSpeed.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\LimitFallSpeed.cs",
+              "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\LimitFallSpeed.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\LimitFallSpeed.cs",
+              "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\LimitFallSpeed.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T20:37:54.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OVRConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Library\\PackageCache\\com.meta.xr.sdk.core@5c4cefc6b3e8\\Editor\\OVRConfig.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.meta.xr.sdk.core@5c4cefc6b3e8\\Editor\\OVRConfig.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Library\\PackageCache\\com.meta.xr.sdk.core@5c4cefc6b3e8\\Editor\\OVRConfig.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.meta.xr.sdk.core@5c4cefc6b3e8\\Editor\\OVRConfig.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAuwFEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T20:00:32.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ToggleGrab.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\ToggleGrab.cs",
+              "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\ToggleGrab.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\ToggleGrab.cs",
+              "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\ToggleGrab.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAqwDgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T19:50:56.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AxeSlicer.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\AxeSlicer.cs",
+              "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\AxeSlicer.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\AxeSlicer.cs",
+              "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\AxeSlicer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwCAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T17:22:44.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FruitSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\FruitSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\FruitSpawner.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\FruitSpawner.cs",
+              "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\FruitSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T16:58:16.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Steering.cs",
+              "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\Steering.cs",
+              "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\Steering.cs",
+              "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\Steering.cs",
+              "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\Steering.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAqwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T16:57:18.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ScoreManager.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\ScoreManager.cs",
               "RelativeDocumentMoniker": "Assets\\Setup-and-Demo\\Scripts\\ScoreManager.cs",
               "ToolTip": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Setup-and-Demo\\Scripts\\ScoreManager.cs",
               "RelativeToolTip": "Assets\\Setup-and-Demo\\Scripts\\ScoreManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAqwCkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-07T17:25:38.134Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "LookAtPlayer.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\LookAtPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LookAtPlayer.cs",
@@ -90,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "ScoreUI.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\ScoreUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreUI.cs",
@@ -101,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "Fruit.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\Fruit.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Fruit.cs",
@@ -113,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "ScoreManager.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\ScoreManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreManager.cs",
@@ -125,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "AxeSlicer.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\AxeSlicer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AxeSlicer.cs",
@@ -137,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "FruitHitEffect.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\FruitHitEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FruitHitEffect.cs",
@@ -149,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "OrbitAround.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\OrbitAround.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\OrbitAround.cs",
@@ -161,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "Lit.shader",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Library\\PackageCache\\com.unity.render-pipelines.universal@39c80789bb81\\Shaders\\Lit.shader",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@39c80789bb81\\Shaders\\Lit.shader",
@@ -173,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "ButterflyWingFlap.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\ButterflyWingFlap.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ButterflyWingFlap.cs",
@@ -185,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "RandomAreaMovement.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\RandomAreaMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RandomAreaMovement.cs",
@@ -197,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
               "Title": "FruitSpawner.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\FruitSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FruitSpawner.cs",
@@ -209,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "NewEmptyCSharpScript.cs",
               "DocumentMoniker": "C:\\Users\\Horatio\\Documents\\GitHub\\VR-Multiplayer-Game-Project\\Assets\\Scripts\\NewEmptyCSharpScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NewEmptyCSharpScript.cs",

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 public class ScoreManager : MonoBehaviour
@@ -28,6 +28,17 @@ public class ScoreManager : MonoBehaviour
         }
 
         Instance = this;
+
+        // (تغییر 1) اگر Scene عوض می‌کنی، امتیاز حفظ می‌شود
+        // اگر نمی‌خوای، می‌تونی این خط رو پاک کنی
+        DontDestroyOnLoad(gameObject);
+
+        // (تغییر 2 - اختیاری) ریست امتیاز در شروع
+        CurrentScore = 0;
+        _currentComboCount = 0;
+        _lastSliceTime = -999f;
+
+        Debug.Log("ScoreManager Awake: Instance set.");
     }
 
     public void RegisterFruitSlice(Fruit fruit)
@@ -43,6 +54,8 @@ public class ScoreManager : MonoBehaviour
 
         int delta = fruit.baseScore * _currentComboCount;
         CurrentScore += delta;
+
+        Debug.Log($"Score +{delta} (combo {_currentComboCount}) total={CurrentScore} fruit={fruit.name}");
 
         OnScoreChanged?.Invoke(fruit.name, delta, CurrentScore);
     }
