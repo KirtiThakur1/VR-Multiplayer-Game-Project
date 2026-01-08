@@ -2817,7 +2817,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 375
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3393,6 +3393,12 @@ MonoBehaviour:
   steeringSpeed: 3
   rotationSpeed: 30
   verticalSteering: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  groundOffset: 0.1
+  maxGroundCheckDistance: 6
+  enableGroundFollowing: 1
   navigationBounds: {fileID: 0}
   debugLogs: 1
 --- !u!1 &7216047634103647853
