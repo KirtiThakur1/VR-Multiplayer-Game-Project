@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 7967241435623978589}
   - component: {fileID: 8569683642314256766}
   - component: {fileID: 6893098625347638271}
+  - component: {fileID: 500742197115018582}
   m_Layer: 0
   m_Name: avocado
   m_TagString: Fruit
@@ -355,3 +356,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 3
+  sliced: 0
+--- !u!114 &500742197115018582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101090443976822345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef15f4ee70c284f49b966b6a8b3cc354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  frequency: 1.5
+  colorPulseAmount: 0.25
+  emissionIntensity: 2
+  randomizePhase: 1
+  colorProperty: _BaseColor
+  emissionProperty: _EmissionColor

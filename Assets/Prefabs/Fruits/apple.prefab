@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5069387667720214356}
   - component: {fileID: 7342159039335632614}
   - component: {fileID: 1547274754044980733}
+  - component: {fileID: -607564925880377547}
   m_Layer: 0
   m_Name: apple
   m_TagString: Fruit
@@ -205,3 +206,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 4
+  sliced: 0
+--- !u!114 &-607564925880377547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564240846999082619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef15f4ee70c284f49b966b6a8b3cc354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  frequency: 2
+  colorPulseAmount: 0.35
+  emissionIntensity: 0
+  randomizePhase: 1
+  forceEnableEmissionKeyword: 0
+  logOnStart: 1

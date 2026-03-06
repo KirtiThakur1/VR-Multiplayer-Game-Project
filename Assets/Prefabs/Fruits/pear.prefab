@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4289275539226537596}
   - component: {fileID: 82763236648530528}
   - component: {fileID: -4407424107980513654}
+  - component: {fileID: 8936086147874370054}
   m_Layer: 0
   m_Name: pear
   m_TagString: Fruit
@@ -205,3 +206,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 3
+  sliced: 0
+--- !u!114 &8936086147874370054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738603315666501644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef15f4ee70c284f49b966b6a8b3cc354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  frequency: 1.5
+  colorPulseAmount: 0.35
+  emissionIntensity: 0
+  randomizePhase: 1
+  forceEnableEmissionKeyword: 0
+  logOnStart: 1

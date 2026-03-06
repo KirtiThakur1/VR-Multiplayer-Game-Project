@@ -4502,6 +4502,8 @@ MonoBehaviour:
   rightWing: {fileID: 5961981127626251575}
   flapSpeed: 10
   flapAngle: 30
+  leftAxis: {x: 1, y: 0, z: 0}
+  rightAxis: {x: 1, y: 0, z: 0}
 --- !u!114 &-3609949865238855303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4514,8 +4516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb1be30fb2d8d948ab19d812247f2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
-  turnSpeed: 2
+  moveSpeed: 0.5
+  turnSpeed: 0.5
   verticalAmplitude: 0.3
   verticalSpeed: 2
   areaCenter: {x: 0, y: 0, z: 0}

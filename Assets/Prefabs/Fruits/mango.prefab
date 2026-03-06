@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 9046924957535966261}
   - component: {fileID: 255467814620689567}
   - component: {fileID: 6516612499061657620}
+  - component: {fileID: 5321585391136226639}
   m_Layer: 0
   m_Name: mango
   m_TagString: Fruit
@@ -205,3 +206,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 4
+  sliced: 0
+--- !u!114 &5321585391136226639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249757990968288508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef15f4ee70c284f49b966b6a8b3cc354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  frequency: 1.5
+  colorPulseAmount: 0.35
+  emissionIntensity: 0
+  randomizePhase: 1
+  forceEnableEmissionKeyword: 0
+  logOnStart: 1
