@@ -1,5 +1,34 @@
 {
     "name": "VRControls",
-    "maps": [],
+    "maps": [
+        {
+            "name": "RightHand",
+            "id": "e28e0a61-cb7b-477c-9c11-e2a9bd64c3f5",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "da49741f-5ac2-4a01-a200-7905cfe7de4f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8ee0f017-f8ff-4e29-831e-bf22ea4a8ef6",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
     "controlSchemes": []
 }

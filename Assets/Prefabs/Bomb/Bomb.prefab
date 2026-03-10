@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df5462a5ec8ec424d85985fe9c617559, type: 3}
+      propertyPath: m_TagString
+      value: Bomb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59,9 +63,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df5462a5ec8ec424d85985fe9c617559, type: 3}
       insertIndex: -1
       addedObject: {fileID: -3890330567332335539}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df5462a5ec8ec424d85985fe9c617559, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -6644758006830179502}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df5462a5ec8ec424d85985fe9c617559, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7410132130932193223}
@@ -98,20 +99,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6644758006830179502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7670637473919082169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a88918bad96fb42a4c3f62bb228dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundTag: Ground
-  destroyDelay: 0
 --- !u!135 &7410132130932193223
 SphereCollider:
   m_ObjectHideFlags: 0

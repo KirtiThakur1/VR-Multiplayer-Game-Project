@@ -13,10 +13,12 @@ GameObject:
   - component: {fileID: 7035637146880468576}
   - component: {fileID: 6559671457143701000}
   - component: {fileID: 8924703196950882872}
-  - component: {fileID: 6487772868353685435}
   - component: {fileID: 9045241295642648490}
   - component: {fileID: 5583203748998495873}
-  - component: {fileID: 5100018610502392924}
+  - component: {fileID: 5209536721984802643}
+  - component: {fileID: -8519261002813490622}
+  - component: {fileID: -2918038798030084520}
+  - component: {fileID: -4516573966748750192}
   m_Layer: 0
   m_Name: orange
   m_TagString: Fruit
@@ -141,20 +143,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1210374182389027221, guid: dc271b946f762b940ac61a8bf3e9c859, type: 3}
---- !u!114 &6487772868353685435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8375025899400676664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a88918bad96fb42a4c3f62bb228dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundTag: Ground
-  destroyDelay: 0
 --- !u!95 &9045241295642648490
 Animator:
   serializedVersion: 7
@@ -190,9 +178,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 7035637146880468576}
-  hitColor: {r: 0.0627451, g: 0.7490196, b: 0, a: 1}
-  flashDuration: 0.2
---- !u!114 &5100018610502392924
+  hitColor: {r: 0.054052677, g: 0.96862745, b: 0.0470588, a: 1}
+  flashDuration: 0.7
+  useScalePunch: 1
+  scaleMultiplier: 1.5
+--- !u!114 &5209536721984802643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +191,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 8375025899400676664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498b080bb18566d498af40205fb59be1, type: 3}
+  m_Script: {fileID: 11500000, guid: bc3ff63250d7b4847a7fa12bf693f82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundTag: Ground
+  destroyDelay: 0
+--- !u!114 &-8519261002813490622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375025899400676664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efefe7ebe7bc75b4cb275b294b521c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 3
+  sliced: 0
+--- !u!114 &-2918038798030084520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375025899400676664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef15f4ee70c284f49b966b6a8b3cc354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  frequency: 1.5
+  randomizePhase: 1
+  darkFactor: 0.2
+  brightFactor: 1.6
+--- !u!114 &-4516573966748750192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375025899400676664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f635ab4df7032498cc1c3a61e23b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 7035637146880468576}
+  flashToWhiteAmount: 0.85
+  flashDuration: 0.12
+  useEmission: 1
+  emissionIntensity: 2.5
+  useScalePunch: 1
+  scaleMultiplier: 1.12
+  scaleDuration: 0.12

@@ -7,6 +7,7 @@ TagManager:
   - Fruit
   - Ground
   - Butterfly
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -53,3 +54,10 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
+```
+
+Just **delete these 3 lines:**
+```
+<<<<<<< HEAD
+=======
+>>>>>>> origin/FarnazDev

@@ -5,23 +5,50 @@ using UnityEngine;
 public class FruitSpawner : MonoBehaviour
 {
     [Header("Fruit Prefabs (assign your 10 fruits here)")]
-    public GameObject[] fruitPrefabs;   // <- drag all fruit prefabs in Inspector
+    public GameObject[] fruitPrefabs;
 
     [Header("Spawn Area (local XZ) & Height")]
-    public Vector2 areaSize = new Vector2(6f, 6f);  // width (X) and depth (Z)
-    public float spawnY = 4f;                       // height above spawner
+    public Vector2 areaSize = new Vector2(6f, 6f);
+    public float spawnY = 4f;
 
     [Header("Timing")]
-    public float spawnInterval = 0.6f;              // time between spawns
+    public float spawnInterval = 0.6f;
 
     [Header("Spin/Torque")]
-    public Vector2 angularSpeed = new Vector2(1f, 3f); // random angular velocity
+    public Vector2 angularSpeed = new Vector2(1f, 3f);
+
+    [Header("Fall Control (make fruits fall slowly)")]
+    [Tooltip("Initial downward speed applied at spawn (smaller = slower).")]
+    public float initialDownSpeed = 0.4f;
+
+    [Tooltip("Hard cap for falling speed (prevents fruits from becoming too fast).")]
+    public float maxFallSpeed = 1.8f;
+
+    [Tooltip("Adds air resistance. Higher = slower and smoother motion.")]
+    public float linearDamping = 2.5f;
 
     [Header("Exclusions (optional - to avoid stairs)")]
-    public List<BoxCollider> noSpawnZones = new List<BoxCollider>(); // drag NoSpawn boxes here
+    public List<BoxCollider> noSpawnZones = new List<BoxCollider>();
     public int maxPlacementTries = 20;
 
-    // Draw the yellow box in Scene view so you see where fruits can appear
+    private Coroutine spawnRoutine;
+
+    private void OnEnable()
+    {
+        if (MatchManager.Instance != null)
+        {
+            MatchManager.Instance.OnMatchEnded += HandleMatchEnded;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (MatchManager.Instance != null)
+        {
+            MatchManager.Instance.OnMatchEnded -= HandleMatchEnded;
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -29,7 +56,6 @@ public class FruitSpawner : MonoBehaviour
         Gizmos.DrawWireCube(center, new Vector3(areaSize.x, 0.1f, areaSize.y));
     }
 
-    // Coroutine that runs when the game starts
     private IEnumerator Start()
     {
         if (fruitPrefabs == null || fruitPrefabs.Length == 0)
@@ -38,42 +64,74 @@ public class FruitSpawner : MonoBehaviour
             yield break;
         }
 
-        while (true)
+        yield return new WaitUntil(() => MatchManager.Instance != null);
+
+        yield return new WaitUntil(() => MatchManager.Instance.IsMatchRunning);
+
+        spawnRoutine = StartCoroutine(SpawnLoop());
+    }
+
+    private IEnumerator SpawnLoop()
+    {
+        while (enabled && MatchManager.Instance != null && MatchManager.Instance.IsMatchRunning)
         {
             SpawnOne();
             yield return new WaitForSeconds(spawnInterval);
         }
+
+        spawnRoutine = null;
+    }
+
+    private void HandleMatchEnded(PlayerScore winner, PlayerScore loser)
+    {
+        StopSpawning();
+    }
+
+    public void StopSpawning()
+    {
+        if (spawnRoutine != null)
+        {
+            StopCoroutine(spawnRoutine);
+            spawnRoutine = null;
+        }
+
+        enabled = false;
     }
 
     private void SpawnOne()
     {
-        // Try several times to find a position outside the noSpawnZones
+        if (MatchManager.Instance != null && !MatchManager.Instance.IsMatchRunning)
+            return;
+
         for (int i = 0; i < maxPlacementTries; i++)
         {
-            // pick a random XZ inside the allowed rectangle
             float x = Random.Range(-areaSize.x * 0.5f, areaSize.x * 0.5f);
             float z = Random.Range(-areaSize.y * 0.5f, areaSize.y * 0.5f);
             Vector3 pos = transform.position + new Vector3(x, spawnY, z);
 
-            // if this point is inside a forbidden zone (stairs), reject and try again
             if (InsideAnyNoSpawnZone(pos))
                 continue;
 
-            // choose a random fruit prefab
             int index = Random.Range(0, fruitPrefabs.Length);
             GameObject prefab = fruitPrefabs[index];
 
-            // instantiate the fruit
             var go = Instantiate(prefab, pos, Random.rotation);
 
-            // give it some random spin
             if (go.TryGetComponent<Rigidbody>(out var rb))
             {
-                rb.linearVelocity = Vector3.zero;
+                rb.linearVelocity = new Vector3(0f, -Mathf.Abs(initialDownSpeed), 0f);
+                rb.linearDamping = Mathf.Max(0f, linearDamping);
                 rb.angularVelocity = Random.onUnitSphere * Random.Range(angularSpeed.x, angularSpeed.y);
+
+                if (maxFallSpeed > 0f)
+                {
+                    var limiter = go.GetComponent<LimitFallSpeed>();
+                    if (limiter == null) limiter = go.AddComponent<LimitFallSpeed>();
+                    limiter.maxFallSpeed = maxFallSpeed;
+                }
             }
 
-            return; // success, stop the loop
+            return;
         }
 
         Debug.LogWarning("FruitSpawner: Could not find spawn point outside noSpawnZones. " +
@@ -89,7 +147,6 @@ public class FruitSpawner : MonoBehaviour
             if (bc == null) continue;
             Bounds b = bc.bounds;
 
-            // ignore Y; check only XZ inside the box
             Vector3 flat = new Vector3(worldPos.x, b.center.y, worldPos.z);
             if (b.Contains(flat))
                 return true;
