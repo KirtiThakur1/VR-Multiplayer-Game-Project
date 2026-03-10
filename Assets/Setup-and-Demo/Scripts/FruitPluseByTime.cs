@@ -38,8 +38,8 @@ public class FruitPulseByTime : MonoBehaviour
         }
 
         mpb = new MaterialPropertyBlock();
-        baseColorId = Shader.PropertyToID("_BaseColor"); // URP/Lit
-        colorId = Shader.PropertyToID("_Color");         // Built-in fallback
+        baseColorId = Shader.PropertyToID("_BaseColor");
+        colorId = Shader.PropertyToID("_Color");
 
         var mat = targetRenderer.sharedMaterial;
         if (mat == null)
@@ -67,7 +67,7 @@ public class FruitPulseByTime : MonoBehaviour
     void Update()
     {
         float w = Mathf.PI * 2f * frequency;
-        float s = (Mathf.Sin(Time.time * w + phase) + 1f) * 0.5f; // 0..1
+        float s = (Mathf.Sin(Time.time * w + phase) + 1f) * 0.5f;
 
         Color low = baseColor * darkFactor;
         Color high = baseColor * brightFactor;
@@ -79,5 +79,15 @@ public class FruitPulseByTime : MonoBehaviour
         else mpb.SetColor(colorId, pulsed);
 
         targetRenderer.SetPropertyBlock(mpb);
+    }
+
+    public void StopPulseAndClear()
+    {
+        enabled = false;
+
+        if (targetRenderer != null)
+        {
+            targetRenderer.SetPropertyBlock(null);
+        }
     }
 }

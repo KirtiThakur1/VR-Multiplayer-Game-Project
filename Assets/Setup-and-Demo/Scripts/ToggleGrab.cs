@@ -8,18 +8,16 @@ public class ToggleGrab : MonoBehaviour
 {
     [Header("References")]
     public XRGrabInteractable grab;
-
-    [Tooltip("Optional. If you can't assign in Inspector, leave empty and it will auto-find RightHand Direct.")]
     public XRDirectInteractor rightHand;
 
-    [Header("Auto-Find (if Right Hand is not assigned)")]
-    [Tooltip("Must match your Hierarchy object name. In your case: RightHand Direct")]
+    [Header("Auto-Find")]
     public string rightHandDirectObjectName = "RightHand Direct";
 
     [Header("Input")]
     public InputActionProperty gripAction;
 
     private bool isHeld;
+    private bool inputLocked;
 
     void Awake()
     {
@@ -29,7 +27,6 @@ public class ToggleGrab : MonoBehaviour
 
     void Start()
     {
-        // Auto-find Right Hand Direct Interactor if not assigned
         if (rightHand == null)
         {
             var go = GameObject.Find(rightHandDirectObjectName);
@@ -38,8 +35,9 @@ public class ToggleGrab : MonoBehaviour
         }
 
         if (rightHand == null)
-            Debug.LogError($"[ToggleGrab] Could not find XRDirectInteractor on '{rightHandDirectObjectName}'. " +
-                           $"Make sure that object exists and has an XR Direct Interactor component.");
+        {
+            Debug.LogError($"[ToggleGrab] Could not find XRDirectInteractor on '{rightHandDirectObjectName}'.");
+        }
     }
 
     void OnEnable()
@@ -51,41 +49,52 @@ public class ToggleGrab : MonoBehaviour
         }
 
         gripAction.action.Enable();
-        gripAction.action.performed += OnGrip;
+        gripAction.action.performed += OnGripPerformed;
+        gripAction.action.canceled += OnGripReleased;
     }
 
     void OnDisable()
     {
         if (gripAction.action == null) return;
 
-        gripAction.action.performed -= OnGrip;
+        gripAction.action.performed -= OnGripPerformed;
+        gripAction.action.canceled -= OnGripReleased;
         gripAction.action.Disable();
     }
 
-    void OnGrip(InputAction.CallbackContext ctx)
+    void OnGripPerformed(InputAction.CallbackContext ctx)
     {
-        if (grab == null) return;
-        if (rightHand == null) return;
+        if (inputLocked) return;
+        inputLocked = true;
+
+        if (grab == null || rightHand == null) return;
 
         var manager = grab.interactionManager;
         if (manager == null)
         {
-            Debug.LogWarning("[ToggleGrab] Interaction Manager is null. Assign XR Interaction Manager in scene.");
+            Debug.LogWarning("[ToggleGrab] Interaction Manager is null.");
             return;
         }
 
-        var interactor = (IXRSelectInteractor)rightHand;
-        var interactable = (IXRSelectInteractable)grab;
+        IXRSelectInteractor interactor = rightHand;
+        IXRSelectInteractable interactable = grab;
 
         if (!isHeld)
         {
             manager.SelectEnter(interactor, interactable);
             isHeld = true;
+            Debug.Log("[ToggleGrab] Grabbed");
         }
         else
         {
             manager.SelectExit(interactor, interactable);
             isHeld = false;
+            Debug.Log("[ToggleGrab] Released");
         }
+    }
+
+    void OnGripReleased(InputAction.CallbackContext ctx)
+    {
+        inputLocked = false;
     }
 }

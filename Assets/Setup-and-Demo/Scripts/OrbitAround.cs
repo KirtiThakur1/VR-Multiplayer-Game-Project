@@ -10,29 +10,44 @@ public class OrbitAround : MonoBehaviour
     public float orbitSpeedDeg = 60f;
     public float orbitRadius = 0.7f;
 
-    [Header("When Released: return to orbit")]
-    public float returnToOrbitSpeed = 6f; // higher = faster snap back
+    [Header("Return To Grab Point")]
+    public float returnMoveSpeed = 2.5f;
+    public float returnRotateSpeed = 10f;
+    public float snapDistance = 0.02f;
 
-    [Header("Orientation (NOT butterflies)")]
+    [Header("Orientation")]
     public bool faceTangentDirection = true;
-    public float rotateSpeed = 8f;
+    public float orbitRotateSpeed = 8f;
 
-    XRGrabInteractable _grab;
-    bool _isHeld;
+    XRGrabInteractable grab;
+    Rigidbody rb;
 
-    // orbit state
-    float _angleDeg;               // current orbit angle
-    Vector3 _axisNorm;
-    Vector3 _refDir;               // reference direction from center
-    Vector3 _lastOrbitPos;
+    enum OrbitState
+    {
+        Orbiting,
+        Held,
+        Returning
+    }
+
+    OrbitState state = OrbitState.Orbiting;
+
+    Vector3 axisNorm;
+    Vector3 refDir;
+
+    float angleDeg;
+    float savedGrabAngleDeg;
+
+    Vector3 lastOrbitPos;
 
     void Awake()
     {
-        _grab = GetComponent<XRGrabInteractable>();
-        if (_grab != null)
+        grab = GetComponent<XRGrabInteractable>();
+        rb = GetComponent<Rigidbody>();
+
+        if (grab != null)
         {
-            _grab.selectEntered.AddListener(_ => _isHeld = true);
-            _grab.selectExited.AddListener(_ => OnReleased());
+            grab.selectEntered.AddListener(OnGrabbed);
+            grab.selectExited.AddListener(OnReleased);
         }
     }
 
@@ -45,46 +60,54 @@ public class OrbitAround : MonoBehaviour
             return;
         }
 
-        _axisNorm = orbitAxis.sqrMagnitude > 0.0001f ? orbitAxis.normalized : Vector3.up;
+        axisNorm = orbitAxis.sqrMagnitude > 0.0001f ? orbitAxis.normalized : Vector3.up;
 
-        // Initialize orbit angle and radius based on current position in scene
         Vector3 fromCenter = transform.position - orbitCenter.position;
-
-        // Project onto orbit plane (remove axis component)
-        fromCenter = Vector3.ProjectOnPlane(fromCenter, _axisNorm);
+        fromCenter = Vector3.ProjectOnPlane(fromCenter, axisNorm);
 
         if (fromCenter.sqrMagnitude < 0.0001f)
-        {
-            // fallback if placed exactly on center
             fromCenter = Vector3.right * Mathf.Max(orbitRadius, 0.01f);
-        }
 
         orbitRadius = fromCenter.magnitude;
+        refDir = fromCenter.normalized;
 
-        _refDir = fromCenter.normalized; // initial reference direction
+        angleDeg = 0f;
+        savedGrabAngleDeg = 0f;
 
-        // Set initial angle = 0 at refDir
-        _angleDeg = 0f;
+        lastOrbitPos = transform.position;
 
-        _lastOrbitPos = orbitCenter.position + _refDir * orbitRadius;
+        if (rb != null)
+        {
+            rb.useGravity = false;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
     }
 
-    void OnReleased()
+    void OnGrabbed(SelectEnterEventArgs args)
     {
-        _isHeld = false;
+        state = OrbitState.Held;
 
-        // When released, recompute orbit phase from current position so it returns smoothly
-        Vector3 fromCenter = transform.position - orbitCenter.position;
-        fromCenter = Vector3.ProjectOnPlane(fromCenter, _axisNorm);
+        // دقیقا زاویه فعلی روی مدار ذخیره می‌شود
+        savedGrabAngleDeg = angleDeg;
 
-        if (fromCenter.sqrMagnitude > 0.0001f)
+        if (rb != null)
         {
-            // Update radius to current (optional). If you want fixed radius always, comment the next line.
-            orbitRadius = fromCenter.magnitude;
+            rb.useGravity = false;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+    }
 
-            // Compute signed angle between refDir and current dir around axis
-            Vector3 curDir = fromCenter.normalized;
-            _angleDeg = SignedAngleOnAxis(_refDir, curDir, _axisNorm);
+    void OnReleased(SelectExitEventArgs args)
+    {
+        state = OrbitState.Returning;
+
+        if (rb != null)
+        {
+            rb.useGravity = false;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
     }
 
@@ -92,50 +115,95 @@ public class OrbitAround : MonoBehaviour
     {
         if (orbitCenter == null) return;
 
-        if (_isHeld)
-            return; // hand controls it while held
-
-        // Advance orbit
-        _angleDeg += orbitSpeedDeg * Time.deltaTime;
-
-        // Desired orbit position
-        Quaternion q = Quaternion.AngleAxis(_angleDeg, _axisNorm);
-        Vector3 desiredPos = orbitCenter.position + (q * _refDir) * orbitRadius;
-
-        // Smooth return / follow orbit
-        float k = 1f - Mathf.Exp(-returnToOrbitSpeed * Time.deltaTime);
-        transform.position = Vector3.Lerp(transform.position, desiredPos, k);
-
-        // Optional: face tangent direction (makes orbit readable, independent of butterflies)
-        if (faceTangentDirection)
+        if (rb != null)
         {
-            Vector3 tangent = (desiredPos - _lastOrbitPos);
-            _lastOrbitPos = desiredPos;
+            rb.useGravity = false;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
 
-            if (tangent.sqrMagnitude > 0.000001f)
-            {
-                Quaternion targetRot = Quaternion.LookRotation(tangent.normalized, Vector3.up);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotateSpeed * Time.deltaTime);
-            }
+        switch (state)
+        {
+            case OrbitState.Held:
+                // وقتی دست کاربر گرفته، هیچ orbitی انجام نمی‌ده
+                return;
+
+            case OrbitState.Returning:
+                ReturnToSavedGrabPoint();
+                return;
+
+            case OrbitState.Orbiting:
+                OrbitNormally();
+                return;
         }
     }
 
-    static float SignedAngleOnAxis(Vector3 from, Vector3 to, Vector3 axis)
+    void OrbitNormally()
     {
-        // signed angle around axis
-        Vector3 f = Vector3.ProjectOnPlane(from, axis).normalized;
-        Vector3 t = Vector3.ProjectOnPlane(to, axis).normalized;
+        angleDeg += orbitSpeedDeg * Time.deltaTime;
 
-        float angle = Vector3.SignedAngle(f, t, axis);
-        return angle;
+        Quaternion q = Quaternion.AngleAxis(angleDeg, axisNorm);
+        Vector3 desiredPos = orbitCenter.position + (q * refDir) * orbitRadius;
+
+        transform.position = desiredPos;
+
+        if (faceTangentDirection)
+        {
+            Vector3 tangent = (desiredPos - lastOrbitPos);
+            if (tangent.sqrMagnitude > 0.000001f)
+            {
+                Quaternion targetRot = Quaternion.LookRotation(tangent.normalized, Vector3.up);
+                transform.rotation = Quaternion.Slerp(
+                    transform.rotation,
+                    targetRot,
+                    orbitRotateSpeed * Time.deltaTime
+                );
+            }
+        }
+
+        lastOrbitPos = desiredPos;
+    }
+
+    void ReturnToSavedGrabPoint()
+    {
+        Quaternion q = Quaternion.AngleAxis(savedGrabAngleDeg, axisNorm);
+        Vector3 targetPos = orbitCenter.position + (q * refDir) * orbitRadius;
+
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            targetPos,
+            returnMoveSpeed * Time.deltaTime
+        );
+
+        if (faceTangentDirection)
+        {
+            Vector3 tangentDir = Vector3.Cross(axisNorm, (targetPos - orbitCenter.position).normalized);
+            if (tangentDir.sqrMagnitude > 0.000001f)
+            {
+                Quaternion targetRot = Quaternion.LookRotation(tangentDir.normalized, Vector3.up);
+                transform.rotation = Quaternion.Slerp(
+                    transform.rotation,
+                    targetRot,
+                    returnRotateSpeed * Time.deltaTime
+                );
+            }
+        }
+
+        if (Vector3.Distance(transform.position, targetPos) <= snapDistance)
+        {
+            transform.position = targetPos;
+            angleDeg = savedGrabAngleDeg;
+            lastOrbitPos = targetPos;
+            state = OrbitState.Orbiting;
+        }
     }
 
     void OnDestroy()
     {
-        if (_grab != null)
+        if (grab != null)
         {
-            _grab.selectEntered.RemoveAllListeners();
-            _grab.selectExited.RemoveAllListeners();
+            grab.selectEntered.RemoveListener(OnGrabbed);
+            grab.selectExited.RemoveListener(OnReleased);
         }
     }
 }

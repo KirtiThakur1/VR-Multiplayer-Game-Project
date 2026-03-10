@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7412699620070898228}
   - component: {fileID: 1402762515596195340}
   - component: {fileID: -3778502673296194580}
+  - component: {fileID: 3286137342856866616}
   m_Layer: 0
   m_Name: grape
   m_TagString: Fruit
@@ -123,8 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
-  hitColor: {r: 1, g: 1, b: 1, a: 1}
+  hitColor: {r: 1, g: 0, b: 0.7693105, a: 1}
   flashDuration: 0.2
+  useScalePunch: 1
+  scaleMultiplier: 1.15
 --- !u!114 &7412699620070898228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,11 +170,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRenderer: {fileID: 0}
   frequency: 1.5
-  colorPulseAmount: 0.25
-  emissionIntensity: 2
   randomizePhase: 1
-  colorProperty: _BaseColor
-  emissionProperty: _EmissionColor
+  darkFactor: 0.2
+  brightFactor: 1.6
+--- !u!114 &3286137342856866616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823893399119973139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f635ab4df7032498cc1c3a61e23b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  flashToWhiteAmount: 0.85
+  flashDuration: 0.12
+  useEmission: 1
+  emissionIntensity: 2.5
+  useScalePunch: 1
+  scaleMultiplier: 1.12
+  scaleDuration: 0.12
 --- !u!1 &1718941037900234636
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +204,7 @@ GameObject:
   - component: {fileID: 4030451023092528930}
   - component: {fileID: 3219521370692132262}
   - component: {fileID: 3534307980826828870}
+  - component: {fileID: 2834281621057800740}
   m_Layer: 0
   m_Name: grapes_mesh
   m_TagString: Untagged
@@ -258,3 +280,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2834281621057800740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718941037900234636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f635ab4df7032498cc1c3a61e23b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 3534307980826828870}
+  flashToWhiteAmount: 0.85
+  flashDuration: 0.12
+  useEmission: 1
+  emissionIntensity: 2.5
+  useScalePunch: 1
+  scaleMultiplier: 1.12
+  scaleDuration: 0.12

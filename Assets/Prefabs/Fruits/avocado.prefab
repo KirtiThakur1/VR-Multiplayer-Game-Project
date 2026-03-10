@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 4529297612182665786}
   - component: {fileID: 1722814243875775981}
   - component: {fileID: 7639378229670472482}
+  - component: {fileID: 1939487261367153415}
   m_Layer: 0
   m_Name: avocado_mesh
   m_TagString: Untagged
@@ -189,6 +190,8 @@ MonoBehaviour:
   rend: {fileID: 4529297612182665786}
   hitColor: {r: 0.0627451, g: 0.7490196, b: 0, a: 1}
   flashDuration: 0.2
+  useScalePunch: 1
+  scaleMultiplier: 1.15
 --- !u!114 &7639378229670472482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +206,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundTag: Ground
   destroyDelay: 0
+--- !u!114 &1939487261367153415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358947202422259477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f635ab4df7032498cc1c3a61e23b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 4529297612182665786}
+  flashToWhiteAmount: 0.85
+  flashDuration: 0.12
+  useEmission: 1
+  emissionIntensity: 2.5
+  useScalePunch: 1
+  scaleMultiplier: 1.12
+  scaleDuration: 0.12
 --- !u!1 &4101090443976822345
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +242,7 @@ GameObject:
   - component: {fileID: 8569683642314256766}
   - component: {fileID: 6893098625347638271}
   - component: {fileID: 500742197115018582}
+  - component: {fileID: -5064539269355341809}
   m_Layer: 0
   m_Name: avocado
   m_TagString: Fruit
@@ -327,8 +351,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
-  hitColor: {r: 0.0627451, g: 0.7490196, b: 0, a: 1}
+  hitColor: {r: 0.99371064, g: 0, b: 0.6704753, a: 1}
   flashDuration: 0.2
+  useScalePunch: 1
+  scaleMultiplier: 1.15
 --- !u!114 &8569683642314256766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,8 +397,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRenderer: {fileID: 0}
   frequency: 1.5
-  colorPulseAmount: 0.25
-  emissionIntensity: 2
   randomizePhase: 1
-  colorProperty: _BaseColor
-  emissionProperty: _EmissionColor
+  darkFactor: 0.2
+  brightFactor: 1.6
+--- !u!114 &-5064539269355341809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101090443976822345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f635ab4df7032498cc1c3a61e23b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  flashToWhiteAmount: 0.85
+  flashDuration: 0.12
+  useEmission: 1
+  emissionIntensity: 2.5
+  useScalePunch: 1
+  scaleMultiplier: 1.12
+  scaleDuration: 0.12

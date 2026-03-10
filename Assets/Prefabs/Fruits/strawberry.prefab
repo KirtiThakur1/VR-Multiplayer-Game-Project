@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2516475317087544467}
   - component: {fileID: -1826636693595872077}
   - component: {fileID: -4836339310944969846}
+  - component: {fileID: 6232004293009093225}
   m_Layer: 0
   m_Name: strawberry
   m_TagString: Fruit
@@ -177,8 +178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 2519837103885168000}
-  hitColor: {r: 0.0627451, g: 0.7490196, b: 0, a: 1}
-  flashDuration: 0.2
+  hitColor: {r: 0, g: 0.8745098, b: 0.005118243, a: 1}
+  flashDuration: 0.7
+  useScalePunch: 1
+  scaleMultiplier: 1.5
 --- !u!114 &2516475317087544467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +224,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRenderer: {fileID: 0}
   frequency: 1.5
-  colorPulseAmount: 0.35
-  emissionIntensity: 0
   randomizePhase: 1
-  forceEnableEmissionKeyword: 0
-  logOnStart: 1
+  darkFactor: 0.2
+  brightFactor: 1.6
+--- !u!114 &6232004293009093225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215774140809847496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f635ab4df7032498cc1c3a61e23b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 2519837103885168000}
+  flashToWhiteAmount: 0.85
+  flashDuration: 0.12
+  useEmission: 1
+  emissionIntensity: 2.5
+  useScalePunch: 1
+  scaleMultiplier: 1.12
+  scaleDuration: 0.12
