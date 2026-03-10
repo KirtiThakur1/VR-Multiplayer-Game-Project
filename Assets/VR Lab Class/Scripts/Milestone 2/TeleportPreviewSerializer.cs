@@ -7,16 +7,16 @@ namespace VRLabClass.Milestone2
     {
         #region Properties
 
-        [Header("Serialized Visuals")] 
+        [Header("Serialized Visuals")]
         [SerializeField] private GameObject _anchorVisuals;
         [SerializeField] private GameObject _previewAvatarVisuals;
         [SerializeField] private GameObject _distanceIndicatorVisuals;
-        
+
         // Network Variables
-        
+
         // used to serialize active state of anchor
         private NetworkVariable<bool> _aimingVisualsActive = new NetworkVariable<bool>(false,
-            NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner); 
+            NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
         // used to serialize active state of preview avatar and distance indicator (both are only active at the same time)
         private NetworkVariable<bool> _lockedVisualsActive = new NetworkVariable<bool>(false,
@@ -28,11 +28,13 @@ namespace VRLabClass.Milestone2
 
         public override void OnNetworkSpawn()
         {
+            Debug.Log($"[Serializer] Spawned. IsOwner={IsOwner}");
             if (!IsOwner) // if we are not the owner --> set current active state and subscribe to change events
             {
+                Debug.Log("[Serializer-Remote] Subscribing to changes");
                 _anchorVisuals.SetActive(_aimingVisualsActive.Value);
                 _aimingVisualsActive.OnValueChanged += OnAimingVisualsActiveChanged;
-                
+
                 _previewAvatarVisuals.SetActive(_lockedVisualsActive.Value);
                 _distanceIndicatorVisuals.SetActive(_lockedVisualsActive.Value);
                 _lockedVisualsActive.OnValueChanged += OnLockedVisualsActiveChanged;
@@ -43,12 +45,24 @@ namespace VRLabClass.Milestone2
         {
             if (IsOwner) // if we are the owner --> update network variables, if active states have changed
             {
+                // Log every 60 frames
+                if (Time.frameCount % 60 == 0)
+                    Debug.Log($"[Serializer-Owner] Anchor={_anchorVisuals.activeSelf} | Avatar={_previewAvatarVisuals.activeSelf}");
+
                 if (_anchorVisuals.activeSelf != _aimingVisualsActive.Value)
+                {
+                    Debug.Log($"[Serializer] Setting aiming → {_anchorVisuals.activeSelf}");
                     _aimingVisualsActive.Value = _anchorVisuals.activeSelf;
+                }
+
 
                 if (_previewAvatarVisuals.activeSelf != _lockedVisualsActive.Value)
+                {
+                    Debug.Log($"[Serializer] Setting locked → {_previewAvatarVisuals.activeSelf}");
                     _lockedVisualsActive.Value = _previewAvatarVisuals.activeSelf;
+                }
             }
+
         }
 
         #endregion
@@ -58,7 +72,7 @@ namespace VRLabClass.Milestone2
         // Method to update active state on change for anchor
         private void OnAimingVisualsActiveChanged(bool previousValue, bool newValue) =>
             _anchorVisuals.SetActive(newValue);
-        
+
         // Method to update active state on change for preview avatar and distance indicator
         private void OnLockedVisualsActiveChanged(bool previousValue, bool newValue)
         {
