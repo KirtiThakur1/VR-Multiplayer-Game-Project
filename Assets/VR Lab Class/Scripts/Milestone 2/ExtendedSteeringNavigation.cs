@@ -54,13 +54,24 @@ namespace VRLabClass.Milestone2
 
         private void Start()
         {
+
+            // ADD THESE LINES FIRST
+            var netObj = GetComponent<NetworkObject>();
+            Debug.Log($"[Steering-Start] Script starting on: {gameObject.name} | HasNetObj={netObj != null} | IsOwner={netObj?.IsOwner} | ClientId={netObj?.OwnerClientId}");
+
+            // rest of your existing Start() code below...
+
+
             if (GetComponent<NetworkObject>() != null) // If this script is attached to a networked UserPrefab
-                if (!GetComponent<NetworkObject>().IsOwner) // And we are not the owner of this UserPrefab
-                {
-                    Destroy(_fovRestrictorPlane.gameObject); // We destroy the fov restrictor plane gameobject so it's not visible on remote avatars
-                    Destroy(this); // We destroy this script (remove it from the prefab), because we don't want to steer remote users
-                    return;
-                }
+
+                Debug.Log($"[Steering] IsOwner={GetComponent<NetworkObject>().IsOwner} | ClientId={NetworkManager.Singleton.LocalClientId}");
+
+            if (!GetComponent<NetworkObject>().IsOwner) // And we are not the owner of this UserPrefab
+            {
+                Destroy(_fovRestrictorPlane.gameObject); // We destroy the fov restrictor plane gameobject so it's not visible on remote avatars
+                Destroy(this); // We destroy this script (remove it from the prefab), because we don't want to steer remote users
+                return;
+            }
 
             // Enabling the actions, so we can read input from them
             _leftHandSteeringAction.action.Enable();
@@ -123,6 +134,7 @@ namespace VRLabClass.Milestone2
 
         private void OnDestroy()
         {
+            Debug.Log($"[Steering-Destroyed] Destroyed on: {gameObject.name} | Frame={Time.frameCount}");
             // FIX: clean up input actions when script is destroyed
             _leftHandSteeringAction.action.Disable();
             _rightHandSteeringAction.action.Disable();
