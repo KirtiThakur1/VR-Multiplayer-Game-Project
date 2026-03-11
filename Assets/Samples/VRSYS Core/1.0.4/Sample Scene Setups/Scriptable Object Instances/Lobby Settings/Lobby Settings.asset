@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lobby Settings
   m_EditorClassIdentifier: 
   autoStart: 0
-  lobbyName: Lobby_629
-  maxUsers: 10
+  lobbyName: Lobby_318
+  maxUsers: 2
   isPrivate: 0

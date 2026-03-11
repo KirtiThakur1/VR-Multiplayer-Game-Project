@@ -4434,7 +4434,7 @@ MonoBehaviour:
   _head: {fileID: 14757756}
   _groundLayers:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 2147483648
   _riseSpeed: 9.81
   _toggleFovRestrictionAction:
     m_UseReference: 1

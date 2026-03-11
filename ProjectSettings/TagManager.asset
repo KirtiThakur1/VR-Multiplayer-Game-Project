@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Ground
+  - Fruit
+  - Bomb
+  - Butterfly
   layers:
   - Default
   - TransparentFX
@@ -36,7 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ground
   m_SortingLayers:
   - name: Default
     uniqueID: 0

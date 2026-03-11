@@ -31,24 +31,6 @@ public class FruitSpawner : MonoBehaviour
     public List<BoxCollider> noSpawnZones = new List<BoxCollider>();
     public int maxPlacementTries = 20;
 
-    private Coroutine spawnRoutine;
-
-    private void OnEnable()
-    {
-        if (MatchManager.Instance != null)
-        {
-            MatchManager.Instance.OnMatchEnded += HandleMatchEnded;
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (MatchManager.Instance != null)
-        {
-            MatchManager.Instance.OnMatchEnded -= HandleMatchEnded;
-        }
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -64,45 +46,15 @@ public class FruitSpawner : MonoBehaviour
             yield break;
         }
 
-        yield return new WaitUntil(() => MatchManager.Instance != null);
-
-        yield return new WaitUntil(() => MatchManager.Instance.IsMatchRunning);
-
-        spawnRoutine = StartCoroutine(SpawnLoop());
-    }
-
-    private IEnumerator SpawnLoop()
-    {
-        while (enabled && MatchManager.Instance != null && MatchManager.Instance.IsMatchRunning)
+        while (true)
         {
             SpawnOne();
             yield return new WaitForSeconds(spawnInterval);
         }
-
-        spawnRoutine = null;
-    }
-
-    private void HandleMatchEnded(PlayerScore winner, PlayerScore loser)
-    {
-        StopSpawning();
-    }
-
-    public void StopSpawning()
-    {
-        if (spawnRoutine != null)
-        {
-            StopCoroutine(spawnRoutine);
-            spawnRoutine = null;
-        }
-
-        enabled = false;
     }
 
     private void SpawnOne()
     {
-        if (MatchManager.Instance != null && !MatchManager.Instance.IsMatchRunning)
-            return;
-
         for (int i = 0; i < maxPlacementTries; i++)
         {
             float x = Random.Range(-areaSize.x * 0.5f, areaSize.x * 0.5f);
@@ -119,10 +71,16 @@ public class FruitSpawner : MonoBehaviour
 
             if (go.TryGetComponent<Rigidbody>(out var rb))
             {
+                // 1) Give it a slow downward start
                 rb.linearVelocity = new Vector3(0f, -Mathf.Abs(initialDownSpeed), 0f);
+
+                // 2) Smooth / slow movement (air resistance)
                 rb.linearDamping = Mathf.Max(0f, linearDamping);
+
+                // 3) Random spin
                 rb.angularVelocity = Random.onUnitSphere * Random.Range(angularSpeed.x, angularSpeed.y);
 
+                // 4) Clamp max fall speed (ensure it never gets too fast)
                 if (maxFallSpeed > 0f)
                 {
                     var limiter = go.GetComponent<LimitFallSpeed>();

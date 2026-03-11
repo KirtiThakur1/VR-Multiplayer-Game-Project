@@ -368,8 +368,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3368713460792008216}
-  - component: {fileID: 2730271779353235341}
   - component: {fileID: 8794040241950043250}
+  - component: {fileID: 869114128001155809}
   m_Layer: 0
   m_Name: <Attach Direct Interactor here>
   m_TagString: Untagged
@@ -392,7 +392,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2679059498078427805}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2730271779353235341
+--- !u!135 &8794040241950043250
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851362364380618563}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &869114128001155809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,11 +425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 5004158246884282620, guid: b98aea139a36a5f49bebda017cda66d4, type: 3}
+  m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
     m_Bits: 4294967295
   m_Handedness: 2
-  m_AttachTransform: {fileID: 5944169173779336167}
+  m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -433,7 +454,7 @@ MonoBehaviour:
       m_Name: Select
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 8ff8592a-e818-4a51-aa54-fc616cae49d3
+      m_Id: 0ecd383f-025e-48a3-9341-8e999bb19274
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -442,7 +463,7 @@ MonoBehaviour:
       m_Name: Select Value
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: 2c9bee39-b856-416d-a68b-809bfa1a6c82
+      m_Id: 1173667d-6648-4e8f-9885-e153306c7aec
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -463,7 +484,7 @@ MonoBehaviour:
       m_Name: Activate
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: ae8e99d7-09d3-440d-b9aa-948c0ddd9bb1
+      m_Id: 918133d9-119d-4701-ac96-ead8fe16fd40
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -472,7 +493,7 @@ MonoBehaviour:
       m_Name: Activate Value
       m_Type: 0
       m_ExpectedControlType: Axis
-      m_Id: 66a453fe-3117-409e-9d83-4628530fbb24
+      m_Id: 7581f5bb-2b31-4a04-9037-9914b431d084
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -524,32 +545,11 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_ImproveAccuracyWithSphereCollider: 0
+  m_ImproveAccuracyWithSphereCollider: 1
   m_PhysicsLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_PhysicsTriggerInteraction: 1
---- !u!135 &8794040241950043250
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2851362364380618563}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2943719812037796881
 GameObject:
   m_ObjectHideFlags: 0
