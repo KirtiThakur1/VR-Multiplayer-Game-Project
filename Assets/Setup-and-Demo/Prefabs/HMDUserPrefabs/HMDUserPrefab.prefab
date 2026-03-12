@@ -2954,7 +2954,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 375
+    m_Bits: 2147484031
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   maxRayLength: 30
   teleportLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2147483648
   rotationTarget: {fileID: 7216047633976425185}
   rotationReference: {fileID: 7216047633375872280}
   rotationMode: 0

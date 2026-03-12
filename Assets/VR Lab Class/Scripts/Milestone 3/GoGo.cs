@@ -22,13 +22,13 @@ namespace VRLabClass.Milestone3
                 return v;
             }
         }
-        
+
         [Header("GoGo Configuration")]
         [SerializeField] private Transform _hand; // Transform of users real hand
         [SerializeField] private Transform _gogoHand; // Hand transform to apply GoGo movement to
         [SerializeField] private GameObject _gogoVisual; // Hand visual that should be applied as soon as gogog hand exceeds the 1:1 mapping distance threshold
-        [SerializeField] [Range(0, 1)] private float _k = .167f; // value k in gogo equation
-        [SerializeField] [Range(0, 1)] private float _distanceThreshold = .4f; // value D in gogo equation
+        [SerializeField][Range(0, 1)] private float _k = .167f; // value k in gogo equation
+        [SerializeField][Range(0, 1)] private float _distanceThreshold = .4f; // value D in gogo equation
 
         #endregion
 
@@ -37,7 +37,7 @@ namespace VRLabClass.Milestone3
         private void Start()
         {
             // Delete component if attached to remote users avatar
-            if(GetComponentInParent<NetworkObject>() != null)
+            if (GetComponentInParent<NetworkObject>() != null)
                 if (!GetComponentInParent<NetworkObject>().IsOwner)
                 {
                     Destroy(this);
@@ -47,7 +47,7 @@ namespace VRLabClass.Milestone3
             // set gogo hand to initial position and rotation, aligned with real hand
             _gogoHand.position = _hand.position;
             _gogoHand.rotation = _hand.rotation;
-            
+
             // initially deactivate visuals
             _gogoVisual.SetActive(false);
         }
@@ -63,11 +63,46 @@ namespace VRLabClass.Milestone3
 
         private void ApplyGoGo()
         {
+            // Get real distance from body center to hand in meters
+            float Rr = Vector3.Distance(_bodyCenter, _hand.position);
+
+            // Convert to cm for GoGo formula (paper uses cm)
+            float Rr_cm = Rr * 100f;
+            float D_cm = _distanceThreshold * 100f;
+
+            float Rv_cm;
+
+            if (Rr_cm < D_cm)
+            {
+                // Within threshold: normal 1:1 mapping
+                Rv_cm = Rr_cm;
+                _gogoVisual.SetActive(false);
+            }
+            else
+            {
+                // Beyond threshold: non-linear GoGo extension
+                Rv_cm = Rr_cm + _k * Mathf.Pow(Rr_cm - D_cm, 2f);
+                _gogoVisual.SetActive(true);
+            }
+
+            // Convert back to meters
+            float Rv = Rv_cm / 100f;
+
+            // Move gogoHand along direction from bodyCenter to real hand
+            Vector3 direction = (_hand.position - _bodyCenter).normalized;
+            _gogoHand.position = _bodyCenter + direction * Rv;
+
+            // Match rotation of real hand
+            _gogoHand.rotation = _hand.rotation;
+        }
+
+        /*private void ApplyGoGo()
+        {
             // HERE: Implementations for 3.3
             // Calculate offset according to GoGo equation
             // Apply offset to _gogoHand
             // Activate _gogVisuals if exceeding _distanceThreshold
-        }
+        }*/
 
         #endregion
     }
