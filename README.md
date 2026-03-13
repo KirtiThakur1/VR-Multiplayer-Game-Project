@@ -12,7 +12,7 @@ This VR multiplayer game was developed as a practical project for the **Virtual 
 The project explores core VR interaction paradigms including navigation, manipulation, and real-time multiplayer synchronization using Unity's Netcode for GameObjects.
 ## 🎬 Demo
 ▶ Click to watch the demo
-https://github.com/KirtiThakur1/VR-Multiplayer-Game-Project/Demo-Video_compressed.mp4
+https://github.com/KirtiThakur1/VR-Multiplayer-Game-Project/blob/main/Demo-Video_compressed.mp4
 
 ## 🛠️ Built With
 
