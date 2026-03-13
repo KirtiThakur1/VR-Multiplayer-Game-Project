@@ -148,7 +148,7 @@ Assets/
 
 **Course:** Virtual Reality  
 **University:** Bauhaus-University Weimar  
-**Supervisors:** Tony Zoeppig, Sebastian Muehlhaus, Karoline Brehm
+**Supervisors:** Tony Zoeppig, Karoline Brehm
 
 ---
 
