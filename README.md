@@ -1,12 +1,12 @@
 # 🥽 VR Multiplayer Game — Fruit Ninja
 
-> A multiplayer Virtual Reality game built with Unity, Meta Quest, and Unity Netcode — developed as part of the Virtual Reality course as a Final Project.
+> A multiplayer Virtual Reality game built with Unity, Meta Quest, and Unity Netcode - developed as part of the Virtual Reality course as a Final Project.
 
 ---
 
 ## 🎮 About The Project
 
-This VR multiplayer game was developed as a practical project for the **Introduction to Virtual Reality Lab Class** at Bauhaus-University Weimar (WS 2025/26). Players inhabit a shared virtual dungeon environment where they can navigate, interact with objects, and compete in a fruit-slashing mini-game using VR controllers.
+This VR multiplayer game was developed as a practical project for the **Virtual Reality Lab Course** at Bauhaus-University Weimar (WS 2025/26). Players inhabit a shared virtual dungeon environment where they can navigate, interact with objects, and compete in a fruit-slashing mini-game using VR controllers.
 
 The project explores core VR interaction paradigms including navigation, manipulation, and real-time multiplayer synchronization using Unity's Netcode for GameObjects.
 
