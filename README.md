@@ -2,6 +2,7 @@
 
 > A multiplayer Virtual Reality game built with Unity, Meta Quest, and Unity Netcode - developed as part of the Virtual Reality course as a Final Project.
 
+![](Game-scene.jpg)
 ---
 
 ## 🎮 About The Project
@@ -9,8 +10,9 @@
 This VR multiplayer game was developed as a practical project for the **Virtual Reality Lab Course** at Bauhaus-University Weimar (WS 2025/26). Players inhabit a shared virtual dungeon environment where they can navigate, interact with objects, and compete in a fruit-slashing mini-game using VR controllers.
 
 The project explores core VR interaction paradigms including navigation, manipulation, and real-time multiplayer synchronization using Unity's Netcode for GameObjects.
-
----
+## 🎬 Demo
+▶ Click to watch the demo
+https://github.com/KirtiThakur1/VR-Multiplayer-Game-Project/Demo-Video_compressed.mp4
 
 ## 🛠️ Built With
 
